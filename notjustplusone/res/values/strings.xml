@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name = "app_name">Not Just +1</string>
+	<string name = "dialogItemTextQuery">Do you want to edit this item?</string>
+	<string name = "dialogValueTextQuery">Do you want to edit the value?</string>
+	<string name = "dialogItemText">Enter a new item name</string>
+	<string name = "dialogValueText">Enter a new value</string>
+	<string name = "cancelledText">Cancelled</string>
 </resources>
