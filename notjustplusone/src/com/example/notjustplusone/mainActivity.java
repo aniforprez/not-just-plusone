@@ -19,19 +19,28 @@ public class mainActivity extends Activity implements OnClickListener {
 	final Context context = this;
 	private counter counterObj;
 	TextView counter_value;
+	TextView counter_item;
+	Button counter_increment;
+	Button counter_decrement;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		Button counter_increment = (Button) findViewById(R.id.counter_increase);
-		Button counter_decrement = (Button) findViewById(R.id.counter_decrease);
-		counter_value = (TextView) findViewById(R.id.counter_value);
-		TextView counter_item = (TextView) findViewById(R.id.counter_item);
 
 		counterObj = new counter();
 
+		counter_increment = (Button) findViewById(R.id.counter_increase);
+		counter_decrement = (Button) findViewById(R.id.counter_decrease);
+		counter_value = (TextView) findViewById(R.id.counter_value);
+		counter_item = (TextView) findViewById(R.id.counter_item);
+
 		counter_value.setText(String.valueOf(counterObj.getCounterValue()));
+		counter_item.setText(counterObj.item);
+
+		if(counterObj.getCounterValue() <= 0) {
+			counter_decrement.setEnabled(false);
+		}
 
 		counter_increment.setOnClickListener(this);
 		counter_decrement.setOnClickListener(this);
@@ -70,11 +79,17 @@ public class mainActivity extends Activity implements OnClickListener {
 				int newCounterValue = counterObj.incrementValue();
 				counter_value = (TextView) findViewById(R.id.counter_value);
 				counter_value.setText(String.valueOf(newCounterValue));
+				if(newCounterValue > 0) {
+					counter_decrement.setEnabled(true);
+				}
 				break;
 			case R.id.counter_decrease:
 				newCounterValue = counterObj.decrementValue();
 				counter_value = (TextView) findViewById(R.id.counter_value);
 				counter_value.setText(String.valueOf(newCounterValue));
+				if(newCounterValue <= 0) {
+					counter_decrement.setEnabled(false);
+				}
 				break;
 		}
 	}
