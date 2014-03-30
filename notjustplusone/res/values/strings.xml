@@ -6,4 +6,5 @@
 	<string name = "dialogItemText">Enter a new item name</string>
 	<string name = "dialogValueText">Enter a new value</string>
 	<string name = "cancelledText">Cancelled</string>
+	<string name = "savedText">Saved</string>
 </resources>

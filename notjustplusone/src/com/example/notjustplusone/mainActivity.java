@@ -95,6 +95,7 @@ public class mainActivity extends Activity implements OnClickListener {
 	public void simpleDialogMaker(final String type) {
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
 		alertDialogBuilder
+				//If yes is clicked then another dialog to enter input is called namely setDialogMaker function
 				.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
 						textDialogMaker(type);
@@ -102,13 +103,15 @@ public class mainActivity extends Activity implements OnClickListener {
 				})
 				.setNegativeButton("No", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int id) {
-						Toast.makeText(getApplicationContext(), R.string.cancelledText, Toast.LENGTH_LONG).show();
+						//If user presses no button then a toast is shown and he is returned
+						Toast.makeText(getApplicationContext(), R.string.cancelledText, Toast.LENGTH_SHORT).show();
 					}
 				});
+		//complex if-else statement because fuck if switch for strings isn't supported
 		if(type.equals("item")) {
 			alertDialogBuilder.setMessage(R.string.dialogItemTextQuery);
 		}
-		if(type.equals("value")) {
+		else if(type.equals("value")) {
 			alertDialogBuilder.setMessage(R.string.dialogValueTextQuery);
 		}
 		alertDialogBuilder.create();
@@ -119,14 +122,16 @@ public class mainActivity extends Activity implements OnClickListener {
 	public void textDialogMaker(String type) {
 		AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(context);
 		LayoutInflater dialogInflater = getLayoutInflater();
+		//layout inflated to view THEN to dialog to allow for searching for views inside layout
 		View content = dialogInflater.inflate(R.layout.textdialog, null);
 		editDialogBuilder.setView(content)
 				.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialogInterface, int i) {
-						Toast.makeText(getApplicationContext(), R.string.cancelledText, Toast.LENGTH_LONG).show();
+						Toast.makeText(getApplicationContext(), R.string.cancelledText, Toast.LENGTH_SHORT).show();
 					}
 				});
+		//this is why view was inflated first. otherwise this wouldn't work
 		final EditText editText = (EditText) content.findViewById(R.id.dialogInput);
 		if (type.equals("item")) {
 			editDialogBuilder.setTitle(R.string.dialogItemText)
@@ -134,27 +139,47 @@ public class mainActivity extends Activity implements OnClickListener {
 						@Override
 						public void onClick(DialogInterface dialogInterface, int i) {
 							String newItemText;
+							//get the string inside and check if it's valid.
+							//assign to counterObj and update textview if fine
 							newItemText = editText.getText().toString();
-							counterObj.setItemString(newItemText);
-							counter_item.setText(newItemText);
+							if(newItemText == null || newItemText.trim().length() == 0)
+								Toast.makeText(getApplicationContext(), "Invalid Item Name", Toast.LENGTH_SHORT).show();
+							else {
+								counterObj.setItemString(newItemText);
+								counter_item.setText(newItemText);
+								Toast.makeText(getApplicationContext(), R.string.savedText, Toast.LENGTH_SHORT).show();
+							}
+
 						}
 					});
+			//since counter items are characters
 			editText.setInputType(InputType.TYPE_CLASS_TEXT);
 		}
-		if (type.equals("value")) {
+		else if (type.equals("value")) {
 			editDialogBuilder.setTitle(R.string.dialogValueText)
 					.setPositiveButton("Save", new DialogInterface.OnClickListener() {
 						@Override
 						public void onClick(DialogInterface dialogInterface, int i) {
 							int newValue;
+							//get the integer inside and check if it's valid.
+							//assign to counterObj and update textview if fine
 							newValue = Integer.valueOf(editText.getText().toString());
-							counterObj.setCounterValue(newValue);
-							counter_value.setText(String.valueOf(newValue));
-							if(counterObj.getCounterValue() <= 0) {
-								counter_decrement.setEnabled(false);
+							if(newValue < 0)
+								Toast.makeText(getApplicationContext(), "Invalid Item Name", Toast.LENGTH_SHORT).show();
+							else {
+								counterObj.setCounterValue(newValue);
+								counter_value.setText(String.valueOf(newValue));
+								if(newValue <= 0) {
+									counter_decrement.setEnabled(false);
+								}
+								if(newValue > 0) {
+									counter_decrement.setEnabled(true);
+								}
+								Toast.makeText(getApplicationContext(), R.string.savedText, Toast.LENGTH_SHORT).show();
 							}
 						}
 					});
+			//duh, how will values be chars
 			editText.setInputType(InputType.TYPE_CLASS_NUMBER);
 		}
 		editDialogBuilder.create();
