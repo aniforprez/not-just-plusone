@@ -119,7 +119,7 @@ public class mainActivity extends Activity implements OnClickListener {
 	public void textDialogMaker(String type) {
 		AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(context);
 		LayoutInflater dialogInflater = getLayoutInflater();
-		View content = dialogInflater.inflate(R.layout.dialogbasic, null);
+		View content = dialogInflater.inflate(R.layout.textdialog, null);
 		editDialogBuilder.setView(content)
 				.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 					@Override
