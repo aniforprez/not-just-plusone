@@ -24,7 +24,7 @@
       </config>
     </shared>
     <layouts>
-      <layout url="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+      <layout url="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
         <config>
           <device>Nexus 4</device>
           <theme>@android:style/Theme.Holo.Light.DarkActionBar</theme>
@@ -44,10 +44,13 @@
   </component>
   <component name="ChangeListManager">
     <list id="df974482-9825-4de6-9ba5-21042dfb55fe" name="Default" comment="Initial commit. The basic counter works with numbers increasing from 0 to infinity.&#10;&#10;(cherry picked from commit e1613f881ca989d55220ad289e091ed7ad4a1e08)&#10;" />
-    <list default="true" id="3d0fe74f-01ae-40de-8dc5-3df11819c87a" name="Initial commit. The basic counter works with numbers increasing from 0 to infinity. (cherry picked from commit e1613f8)" comment="textdialog.xml added since last push didn't allow for some goddamned reason">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" afterPath="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" />
+    <list default="true" id="3d0fe74f-01ae-40de-8dc5-3df11819c87a" name="Initial commit. The basic counter works with numbers increasing from 0 to infinity. (cherry picked from commit e1613f8)" comment="confirmation toasts for successful item and value edits, comments added">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notjustplusone/res/layout/activity_main.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" />
+      <change type="MOVED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\layout\main.xml" afterPath="$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/res/values/strings.xml" afterPath="$PROJECT_DIR$/notjustplusone/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/notjustplusone.iml" afterPath="$PROJECT_DIR$/notjustplusone/notjustplusone.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
@@ -115,66 +118,78 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+      <file leaf-file-name="fragmentPager.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8976" vertical-offset="1479" max-vertical-offset="2788">
-              <caret line="149" column="90" selection-start-line="149" selection-start-column="90" selection-end-line="149" selection-end-column="90" />
+            <state vertical-scroll-proportion="0.7616" vertical-offset="51" max-vertical-offset="731">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding>
-                <element signature="e#3709#3731#0" expanded="true" />
-                <element signature="e#3918#3946#0" expanded="true" />
-                <element signature="e#4020#4049#0" expanded="true" />
-                <element signature="e#4789#4811#0" expanded="true" />
-                <element signature="e#5064#5087#0" expanded="true" />
-                <element signature="e#5754#5772#0" expanded="true" />
-                <element signature="e#5991#6015#0" expanded="true" />
-                <element signature="e#6827#6845#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#353#354#0" expanded="true" />
+                <element signature="e#369#370#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#651#652#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="counter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java">
+      <file leaf-file-name="counterFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="782">
-              <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="3281">
+              <caret line="63" column="66" selection-start-line="63" selection-start-column="66" selection-end-line="63" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1759#2063#0" expanded="true" />
+                <element signature="e#2058#2059#0" expanded="true" />
+                <element signature="e#2105#2411#0" expanded="true" />
+                <element signature="e#2406#2407#0" expanded="true" />
+                <element signature="e#2452#2606#0" expanded="true" />
+                <element signature="e#2601#2602#0" expanded="true" />
+                <element signature="e#2648#2803#0" expanded="true" />
+                <element signature="e#2798#2799#0" expanded="true" />
+                <element signature="e#3321#3470#0" expanded="true" />
+                <element signature="e#3463#3464#0" expanded="true" />
+                <element signature="e#3501#3769#0" expanded="true" />
+                <element signature="e#3705#3727#0" expanded="true" />
+                <element signature="e#3762#3763#0" expanded="true" />
+                <element signature="e#3914#3942#0" expanded="true" />
+                <element signature="e#4016#4045#0" expanded="true" />
+                <element signature="e#4695#4911#0" expanded="true" />
+                <element signature="e#4847#4869#0" expanded="true" />
+                <element signature="e#4904#4905#0" expanded="true" />
+                <element signature="e#5122#5145#0" expanded="true" />
+                <element signature="e#5179#5852#0" expanded="true" />
+                <element signature="e#5780#5798#0" expanded="true" />
+                <element signature="e#5844#5845#0" expanded="true" />
+                <element signature="e#6017#6041#0" expanded="true" />
+                <element signature="e#6075#6892#0" expanded="true" />
+                <element signature="e#6821#6839#0" expanded="true" />
+                <element signature="e#6884#6885#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="838" max-vertical-offset="2108">
-              <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="60" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
+      <file leaf-file-name="counterfragment.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="textdialog.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/textdialog.xml">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="340">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+            <state vertical-scroll-proportion="-4.703704" vertical-offset="247" max-vertical-offset="1989">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -184,7 +199,7 @@
         <entry file="file://$PROJECT_DIR$/notjustplusone/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -211,11 +226,14 @@
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java" />
         <option value="$PROJECT_DIR$/notjustplusone/res/layout/itemprompt.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/res/layout/dialogBasic.xml" />
-        <option value="$PROJECT_DIR$/notjustplusone/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/notjustplusone/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/notjustplusone/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" />
       </list>
     </option>
   </component>
@@ -257,7 +275,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -276,12 +294,17 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="counter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -347,7 +370,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,7 +385,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="C:/Android SDK/sdk/extras/android/support/v13/android-support-v13.jar!/" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="369" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="0485c55e4c4baeeb" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_for_4_65in_720p_Galaxy_Nexus" />
@@ -387,6 +409,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="829" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -432,6 +455,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -457,19 +493,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -591,7 +614,11 @@
       <created>1396176361255</created>
       <updated>1396176361256</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="confirmation toasts for successful item and value edits, comments added">
+      <created>1396178153612</created>
+      <updated>1396178153612</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -621,8 +648,10 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5206738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853898" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -641,8 +670,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853898" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -668,7 +695,8 @@
     <MESSAGE value="trying to fix my damn git :P" />
     <MESSAGE value="dialogbasic.xml added since last push didn't allow for some goddamned reason" />
     <MESSAGE value="textdialog.xml added since last push didn't allow for some goddamned reason" />
-    <option name="LAST_COMMIT_MESSAGE" value="textdialog.xml added since last push didn't allow for some goddamned reason" />
+    <MESSAGE value="confirmation toasts for successful item and value edits, comments added" />
+    <option name="LAST_COMMIT_MESSAGE" value="confirmation toasts for successful item and value edits, comments added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -680,17 +708,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="238">
-          <caret line="6" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
@@ -707,76 +724,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="11" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="238">
-          <caret line="6" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="459">
-          <caret line="6" column="41" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="357">
           <caret line="11" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="238">
           <caret line="6" column="59" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -795,32 +765,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="357">
           <caret line="11" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -839,32 +806,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="340">
           <caret line="11" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -883,32 +847,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="340">
           <caret line="11" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -927,32 +888,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="340">
           <caret line="11" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -971,32 +929,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
           <caret line="5" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -1015,32 +970,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="357">
           <caret line="5" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -1059,32 +1011,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="357">
           <caret line="5" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -1134,73 +1083,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/main.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="838" max-vertical-offset="2108">
-          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="60" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="20995">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/App Design Files/EffectiveNavigation/src/com/example/android/effectivenavigation/CollectionDemoActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3837209" vertical-offset="714" max-vertical-offset="2312">
+          <caret line="105" column="43" selection-start-line="105" selection-start-column="43" selection-end-line="105" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#6005#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22591361" vertical-offset="0" max-vertical-offset="602">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/textdialog.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0752" vertical-offset="157" max-vertical-offset="782">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.090747334" vertical-offset="0" max-vertical-offset="562">
+          <caret line="3" column="57" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/App Design Files/EffectiveNavigation/src/com/example/android/effectivenavigation/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3264" vertical-offset="204" max-vertical-offset="3315">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#8476#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        <state vertical-scroll-proportion="-4.703704" vertical-offset="247" max-vertical-offset="1989">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8976" vertical-offset="1479" max-vertical-offset="2788">
-          <caret line="149" column="90" selection-start-line="149" selection-start-column="90" selection-end-line="149" selection-end-column="90" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="3281">
+          <caret line="63" column="66" selection-start-line="63" selection-start-column="66" selection-end-line="63" selection-end-column="66" />
           <folding>
-            <element signature="e#3709#3731#0" expanded="true" />
-            <element signature="e#3918#3946#0" expanded="true" />
-            <element signature="e#4020#4049#0" expanded="true" />
-            <element signature="e#4789#4811#0" expanded="true" />
-            <element signature="e#5064#5087#0" expanded="true" />
-            <element signature="e#5754#5772#0" expanded="true" />
-            <element signature="e#5991#6015#0" expanded="true" />
-            <element signature="e#6827#6845#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1759#2063#0" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
+            <element signature="e#2105#2411#0" expanded="true" />
+            <element signature="e#2406#2407#0" expanded="true" />
+            <element signature="e#2452#2606#0" expanded="true" />
+            <element signature="e#2601#2602#0" expanded="true" />
+            <element signature="e#2648#2803#0" expanded="true" />
+            <element signature="e#2798#2799#0" expanded="true" />
+            <element signature="e#3321#3470#0" expanded="true" />
+            <element signature="e#3463#3464#0" expanded="true" />
+            <element signature="e#3501#3769#0" expanded="true" />
+            <element signature="e#3705#3727#0" expanded="true" />
+            <element signature="e#3762#3763#0" expanded="true" />
+            <element signature="e#3914#3942#0" expanded="true" />
+            <element signature="e#4016#4045#0" expanded="true" />
+            <element signature="e#4695#4911#0" expanded="true" />
+            <element signature="e#4847#4869#0" expanded="true" />
+            <element signature="e#4904#4905#0" expanded="true" />
+            <element signature="e#5122#5145#0" expanded="true" />
+            <element signature="e#5179#5852#0" expanded="true" />
+            <element signature="e#5780#5798#0" expanded="true" />
+            <element signature="e#5844#5845#0" expanded="true" />
+            <element signature="e#6017#6041#0" expanded="true" />
+            <element signature="e#6075#6892#0" expanded="true" />
+            <element signature="e#6821#6839#0" expanded="true" />
+            <element signature="e#6884#6885#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7616" vertical-offset="51" max-vertical-offset="731">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#353#354#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1245,7 +1266,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android API 15 Platform</last-edited>
+          <last-edited>Android API 16 Platform</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

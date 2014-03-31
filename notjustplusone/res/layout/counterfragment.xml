@@ -17,17 +17,11 @@
 		<RelativeLayout
 				android:layout_width = "match_parent"
 				android:layout_height = "0dp"
-				android:layout_weight = ".7">
-		</RelativeLayout>
-
-		<RelativeLayout
-				android:layout_width = "match_parent"
-				android:layout_height = "0dp"
-				android:layout_weight = "2.3"
-				>
+				android:layout_weight = "4"
+				android:gravity = "center_vertical|center_horizontal">
 
 			<TextView
-					android:layout_width = "fill_parent"
+					android:layout_width = "wrap_content"
 					android:layout_height = "wrap_content"
 					android:id = "@+id/counter_value"
 					android:textSize = "100sp"
@@ -40,11 +34,11 @@
 					android:shadowDy = "1"
 					android:shadowRadius = "1"
 					android:gravity = "center"
-					android:layout_alignParentTop = "true"
-					android:layout_alignParentLeft = "true" />
+					android:layout_centerVertical = "true"
+					android:layout_centerHorizontal = "true" />
 
 			<TextView
-					android:layout_width = "fill_parent"
+					android:layout_width = "wrap_content"
 					android:layout_height = "wrap_content"
 					android:id = "@+id/counter_item"
 
@@ -65,28 +59,27 @@
 				android:orientation = "vertical"
 				android:layout_width = "match_parent"
 				android:layout_height = "0dp"
-				android:layout_weight = "3"
+				android:layout_weight = "2"
 				android:weightSum = "2"
 				android:paddingLeft = "20dp"
 				android:paddingRight = "20dp"
-				android:paddingBottom = "10dp"
+				android:paddingBottom = "5dp"
 				android:measureWithLargestChild = "false"
-				android:paddingTop = "10dp">
+				android:paddingTop = "5dp">
 
 			<Button
 					android:layout_width = "match_parent"
 					android:layout_height = "0dp"
 					android:text = "+"
 					android:id = "@+id/counter_increase"
-					android:layout_weight = "1.4"
-					android:layout_marginBottom = "10dp"
-					/>
+					android:layout_weight = "1.2"
+					android:layout_marginBottom = "5dp" />
 
 			<LinearLayout
 					android:orientation = "horizontal"
 					android:layout_width = "match_parent"
 					android:layout_height = "0dp"
-					android:layout_weight = ".6"
+					android:layout_weight = "0.8"
 					android:weightSum = "4"
 					android:showDividers = "middle">
 
