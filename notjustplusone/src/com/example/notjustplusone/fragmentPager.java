@@ -15,16 +15,16 @@ public class fragmentPager extends FragmentPagerAdapter {
 
 	@Override
 	public Fragment getItem(int Index) {
-//		switch (Index) {
-//			case 0:
-//				return new counterFragment();
+		switch (Index) {
+			case 0:
+				return new counterFragment();
 //			case 1:
 //				break;
 //			case 2:
 //				break;
-//		}
-//		return null;
-		return new counterFragment();
+		}
+		return null;
+//		return new counterFragment();
 	}
 
 	@Override
