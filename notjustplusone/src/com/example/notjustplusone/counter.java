@@ -7,10 +7,12 @@ public class counter {
 	int value;
 	//Time timer;
 	String item;
+	counterSettingsClass settings;
 
 	public counter() {
 		value = 0;
 		item = "Sheep";
+
 //		timer.hour = 0;
 //		timer.minute = 0;
 //		timer.second = 0;

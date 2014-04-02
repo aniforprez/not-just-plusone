@@ -1,10 +1,13 @@
 package com.example.notjustplusone;
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,20 +22,25 @@ import android.widget.Toast;
  */
 public class counterFragment extends Fragment {
 	private counter counterObj;
+	private SharedPreferences settings;
 	TextView counter_value;     //value view object
 	TextView counter_item;      //item view object
 	Button counter_increment;   //+ button object
 	Button counter_decrement;   //- button object
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.counterfragment, container, false);;
+	public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+		//inflate the fragment with counterfragment layout resource
+		View v = inflater.inflate(R.layout.counterfragment, container, false);
 		final Context context = getActivity();
+		final Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
 
 		counterObj = new counter(); //an object for the counter
+		settings = PreferenceManager.getDefaultSharedPreferences(context);  //the preference object
 
 		counter_increment = (Button) v.findViewById(R.id.counter_increase);
 		counter_decrement = (Button) v.findViewById(R.id.counter_decrease);
+
 		counter_value = (TextView) v.findViewById(R.id.counter_value);
 		counter_item = (TextView) v.findViewById(R.id.counter_item);
 
@@ -55,40 +63,59 @@ public class counterFragment extends Fragment {
 				if(newCounterValue > 0) {
 					counter_decrement.setEnabled(true);
 				}
-			}
-		});
-		counter_decrement.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				//- button is clicked
-				int newCounterValue = counterObj.decrementValue();
-				counter_value.setText(String.valueOf(newCounterValue));
-				if(newCounterValue <= 0) {
-					counter_decrement.setEnabled(false);
+				if(settings.getBoolean("vibrate_plus", false) || settings.getBoolean("vibrate_all", false)) {
+					vibrator.vibrate(50);
 				}
 			}
 		});
-		counter_item.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View view) {
-				simpleDialogMaker("item", context);
-				return true;
-			}
-		});
-		counter_value.setOnLongClickListener(new View.OnLongClickListener() {
-			@Override
-			public boolean onLongClick(View view) {
-				simpleDialogMaker("value", context);
-				return true;
-			}
-		});
+
+		if(settings.getBoolean("button_minus", false)) {
+			counter_decrement.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					//- button is clicked
+					int newCounterValue = counterObj.decrementValue();
+					counter_value.setText(String.valueOf(newCounterValue));
+					if(newCounterValue <= 0) {
+						counter_decrement.setEnabled(false);
+					}
+					if(settings.getBoolean("vibrate_minus", false) || settings.getBoolean("vibrate_all", false)) {
+						vibrator.vibrate(50);
+					}
+				}
+			});
+		}
+		else {
+			counter_decrement.setVisibility(View.GONE);
+		}
+
+		if(settings.getBoolean("edit_item", false)) {
+			counter_item.setOnLongClickListener(new View.OnLongClickListener() {
+				@Override
+				public boolean onLongClick(View view) {
+					simpleDialogMaker("item", context);
+					return true;
+				}
+			});
+		}
+
+		if(settings.getBoolean("edit_value", false)) {
+			counter_value.setOnLongClickListener(new View.OnLongClickListener() {
+				@Override
+				public boolean onLongClick(View view) {
+					simpleDialogMaker("value", context);
+					return true;
+				}
+			});
+		}
+
 		return v;
 	}
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
+		//simple onActivityCreated ovverride to pass on arguments to super
 		super.onActivityCreated(savedInstanceState);
-
 	}
 
 	//generic function to create simple confirmation dialogs on this screen
@@ -114,6 +141,7 @@ public class counterFragment extends Fragment {
 		else if(type.equals("value")) {
 			alertDialogBuilder.setMessage(R.string.dialogValueTextQuery);
 		}
+		//dialog is created and displayed
 		alertDialogBuilder.create();
 		alertDialogBuilder.show();
 	}
@@ -182,6 +210,7 @@ public class counterFragment extends Fragment {
 			//duh, how will values be chars
 			editText.setInputType(InputType.TYPE_CLASS_NUMBER);
 		}
+		//the dialog is created then displayed
 		editDialogBuilder.create();
 		editDialogBuilder.show();
 	}

@@ -1,25 +1,29 @@
 package com.example.notjustplusone;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.support.v13.app.FragmentPagerAdapter;
 
 public class fragmentPager extends FragmentPagerAdapter {
 	/**
-	 * Main activity of the counter and the value and all that jazz
+	 * Pager to manage the fragments and choose which one is displayed
 	 */
 
+	//pass along the cheese! or in this case, args to the super
 	public fragmentPager(FragmentManager fm) {
 		super(fm);
 	}
 
 	@Override
 	public Fragment getItem(int Index) {
+		//override to choose which fragment gets returned for which page
+		//for the value that view is set in, the fragment we choose must be returned
+		//this is changed by setCurrentItem in mainActivity
 		switch (Index) {
 			case 0:
 				return new counterFragment();
-//			case 1:
-//				break;
+			case 1:
+				return new settingsFragment();
 //			case 2:
 //				break;
 		}
@@ -29,7 +33,8 @@ public class fragmentPager extends FragmentPagerAdapter {
 
 	@Override
 	public int getCount() {
-		return 1;
+		//this is the number of pages. change as needed
+		return 2;
 	}
 }
 

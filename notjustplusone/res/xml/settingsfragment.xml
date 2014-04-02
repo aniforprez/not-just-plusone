@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory
+		android:title="Vibration">
+
+		<CheckBoxPreference
+			android:key="vibrate_plus"
+		    android:title="Vibrate when pushing the + button"
+			android:defaultValue="false" />
+		<CheckBoxPreference
+			android:key="vibrate_minus"
+		    android:title="Vibrate when pushing the - button"
+		    android:defaultValue="false" />
+		<CheckBoxPreference
+			android:key="vibrate_all"
+		    android:title="Vibrate when pushing any button"
+		    android:defaultValue="false" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="Buttons">
+
+	    <CheckBoxPreference
+		    android:key="button_minus"
+	        android:title="Minus button (u wantings?)"
+	        android:defaultValue="true" />
+	</PreferenceCategory>
+
+	<PreferenceCategory
+		android:title="Editing">
+
+		<CheckBoxPreference
+			android:key="edit_value"
+		    android:title="Enable editing of value"
+		    android:defaultValue="true" />
+		<CheckBoxPreference
+				android:key="edit_item"
+				android:title="Enable editing of item"
+				android:defaultValue="true" />
+	</PreferenceCategory>
+</PreferenceScreen>
