@@ -3,8 +3,12 @@
   <component name="AndroidConfiguredLogFilters">
     <filters>
       <filter>
+        <option name="logLevel" value="verbose" />
+        <option name="logMessagePattern" value="" />
+        <option name="logTagPattern" value="" />
         <option name="name" value="app: com.example.notjustplusone" />
         <option name="packageNamePattern" value="com.example.notjustplusone" />
+        <option name="pid" value="" />
       </filter>
     </filters>
   </component>
@@ -46,14 +50,9 @@
   <component name="ChangeListManager">
     <list id="df974482-9825-4de6-9ba5-21042dfb55fe" name="Default" comment="Initial commit. The basic counter works with numbers increasing from 0 to infinity.&#10;&#10;(cherry picked from commit e1613f881ca989d55220ad289e091ed7ad4a1e08)&#10;" />
     <list default="true" id="3d0fe74f-01ae-40de-8dc5-3df11819c87a" name="Initial commit. The basic counter works with numbers increasing from 0 to infinity. (cherry picked from commit e1613f8)" comment="added settings functionality. reads the settings and performs actions. now i need to add a onsharedpreferenceschangedlistener and make this proper.&#10;&#10;also added a countersettings class to make storing the settings of individual counters simpler.&#10;&#10;whew this is tough but cool&#10;&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notjustplusone/res/xml/settingsfragment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" afterPath="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java" />
+      <change type="MOVED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\src\com\example\notjustplusone\counter.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="TRACKING_ENABLED" value="true" />
@@ -124,23 +123,17 @@
       <file leaf-file-name="counterFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2641196" vertical-offset="429" max-vertical-offset="3213">
-              <caret line="88" column="55" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+            <state vertical-scroll-proportion="-1.9104" vertical-offset="2656" max-vertical-offset="3281">
+              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
               <folding>
-                <element signature="e#2683#3134#0" expanded="true" />
-                <element signature="e#3128#3129#0" expanded="true" />
-                <element signature="e#3289#3449#0" expanded="true" />
-                <element signature="e#3443#3444#0" expanded="true" />
-                <element signature="e#3546#3707#0" expanded="true" />
-                <element signature="e#3701#3702#0" expanded="true" />
-                <element signature="e#4682#4704#0" expanded="true" />
-                <element signature="e#4891#4919#0" expanded="true" />
-                <element signature="e#4993#5022#0" expanded="true" />
-                <element signature="e#5860#5882#0" expanded="true" />
-                <element signature="e#6135#6158#0" expanded="true" />
-                <element signature="e#6793#6811#0" expanded="true" />
-                <element signature="e#7030#7054#0" expanded="true" />
-                <element signature="e#7834#7852#0" expanded="true" />
+                <element signature="e#4813#4835#0" expanded="true" />
+                <element signature="e#5022#5050#0" expanded="true" />
+                <element signature="e#5124#5153#0" expanded="true" />
+                <element signature="e#5991#6013#0" expanded="true" />
+                <element signature="e#6266#6289#0" expanded="true" />
+                <element signature="e#6934#6952#0" expanded="true" />
+                <element signature="e#7176#7200#0" expanded="true" />
+                <element signature="e#7980#7998#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,19 +142,22 @@
       <file leaf-file-name="settingsFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-              <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="counter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java">
+      <file leaf-file-name="counterClass.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="547" max-vertical-offset="1224">
+              <caret line="63" column="58" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+              <folding>
+                <element signature="e#803#804#0" expanded="true" />
+                <element signature="e#825#826#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -170,7 +166,7 @@
         <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
+              <caret line="15" column="34" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -189,7 +185,7 @@
       <file leaf-file-name="fragmentPager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+            <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="816">
               <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
               <folding />
             </state>
@@ -199,18 +195,8 @@
       <file leaf-file-name="mainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="544">
               <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -242,12 +228,14 @@
         <option value="$PROJECT_DIR$/notjustplusone/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/res/layout/settingsfragment.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" />
-        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" />
         <option value="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/res/xml/settingsfragment.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettings.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" />
       </list>
     </option>
@@ -489,19 +477,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -527,6 +502,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -660,7 +648,11 @@
       <created>1396349445639</created>
       <updated>1396349445639</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added settings functionality. reads the settings and performs actions. now i need to add a onsharedpreferenceschangedlistener and make this proper.&#10;&#10;also added a countersettings class to make storing the settings of individual counters simpler.&#10;&#10;whew this is tough but cool&#10;&#10;">
+      <created>1396464341026</created>
+      <updated>1396464341026</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -688,11 +680,10 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5206738" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5198777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32721713" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -706,12 +697,13 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18683812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18683812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853898" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1060,7 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="20995">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,26 +1134,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="12" column="56" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1178,25 +1153,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="547" max-vertical-offset="1224">
+          <caret line="63" column="58" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+          <folding>
+            <element signature="e#803#804#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2641196" vertical-offset="429" max-vertical-offset="3213">
-          <caret line="88" column="55" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
+        <state vertical-scroll-proportion="-1.9104" vertical-offset="2656" max-vertical-offset="3281">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
           <folding>
-            <element signature="e#2683#3134#0" expanded="true" />
-            <element signature="e#3128#3129#0" expanded="true" />
-            <element signature="e#3289#3449#0" expanded="true" />
-            <element signature="e#3443#3444#0" expanded="true" />
-            <element signature="e#3546#3707#0" expanded="true" />
-            <element signature="e#3701#3702#0" expanded="true" />
-            <element signature="e#4682#4704#0" expanded="true" />
-            <element signature="e#4891#4919#0" expanded="true" />
-            <element signature="e#4993#5022#0" expanded="true" />
-            <element signature="e#5860#5882#0" expanded="true" />
-            <element signature="e#6135#6158#0" expanded="true" />
-            <element signature="e#6793#6811#0" expanded="true" />
-            <element signature="e#7030#7054#0" expanded="true" />
-            <element signature="e#7834#7852#0" expanded="true" />
+            <element signature="e#4813#4835#0" expanded="true" />
+            <element signature="e#5022#5050#0" expanded="true" />
+            <element signature="e#5124#5153#0" expanded="true" />
+            <element signature="e#5991#6013#0" expanded="true" />
+            <element signature="e#6266#6289#0" expanded="true" />
+            <element signature="e#6934#6952#0" expanded="true" />
+            <element signature="e#7176#7200#0" expanded="true" />
+            <element signature="e#7980#7998#0" expanded="true" />
           </folding>
         </state>
       </provider>

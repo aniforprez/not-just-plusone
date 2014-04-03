@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -21,8 +23,7 @@ import android.widget.Toast;
  * The Fragment that displays the counter
  */
 public class counterFragment extends Fragment {
-	private counter counterObj;
-	private SharedPreferences settings;
+	private counterClass counterClassObj;
 	TextView counter_value;     //value view object
 	TextView counter_item;      //item view object
 	Button counter_increment;   //+ button object
@@ -35,21 +36,21 @@ public class counterFragment extends Fragment {
 		final Context context = getActivity();
 		final Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
 
-		counterObj = new counter(); //an object for the counter
-		settings = PreferenceManager.getDefaultSharedPreferences(context);  //the preference object
+		counterClassObj = new counterClass(); //an object for the counterClass
+		getSettings(context);
 
-		counter_increment = (Button) v.findViewById(R.id.counter_increase);
+        counter_increment = (Button) v.findViewById(R.id.counter_increase);
 		counter_decrement = (Button) v.findViewById(R.id.counter_decrease);
 
 		counter_value = (TextView) v.findViewById(R.id.counter_value);
 		counter_item = (TextView) v.findViewById(R.id.counter_item);
 
 		//set value and item text to ones stored in counter object
-		counter_value.setText(String.valueOf(counterObj.getCounterValue()));
-		counter_item.setText(counterObj.item);
+		counter_value.setText(String.valueOf(counterClassObj.getCounterValue()));
+		counter_item.setText(counterClassObj.getItemString());
 
 		//ensures that if value is zero, then decrement button is disabled
-		if(counterObj.getCounterValue() <= 0) {
+		if(counterClassObj.getCounterValue() <= 0) {
 			counter_decrement.setEnabled(false);
 		}
 
@@ -58,28 +59,29 @@ public class counterFragment extends Fragment {
 			@Override
 			public void onClick(View view) {
 				//+ button is clicked
-				int newCounterValue = counterObj.incrementValue();
+				int newCounterValue = counterClassObj.incrementValue();
 				counter_value.setText(String.valueOf(newCounterValue));
 				if(newCounterValue > 0) {
 					counter_decrement.setEnabled(true);
 				}
-				if(settings.getBoolean("vibrate_plus", false) || settings.getBoolean("vibrate_all", false)) {
+				if(counterClassObj.getSettingsBool("vibrate_plus") || counterClassObj.getSettingsBool("vibrate_all")) {
 					vibrator.vibrate(50);
 				}
 			}
 		});
 
-		if(settings.getBoolean("button_minus", false)) {
+		if(counterClassObj.getSettingsBool("button_minus")) {
+			counter_decrement.setVisibility(View.VISIBLE);
 			counter_decrement.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
 					//- button is clicked
-					int newCounterValue = counterObj.decrementValue();
+					int newCounterValue = counterClassObj.decrementValue();
 					counter_value.setText(String.valueOf(newCounterValue));
-					if(newCounterValue <= 0) {
+					if (newCounterValue <= 0) {
 						counter_decrement.setEnabled(false);
 					}
-					if(settings.getBoolean("vibrate_minus", false) || settings.getBoolean("vibrate_all", false)) {
+					if (counterClassObj.getSettingsBool("vibrate_minus") || counterClassObj.getSettingsBool("vibrate_all")) {
 						vibrator.vibrate(50);
 					}
 				}
@@ -89,7 +91,7 @@ public class counterFragment extends Fragment {
 			counter_decrement.setVisibility(View.GONE);
 		}
 
-		if(settings.getBoolean("edit_item", false)) {
+		if(counterClassObj.getSettingsBool("edit_item")) {
 			counter_item.setOnLongClickListener(new View.OnLongClickListener() {
 				@Override
 				public boolean onLongClick(View view) {
@@ -99,7 +101,7 @@ public class counterFragment extends Fragment {
 			});
 		}
 
-		if(settings.getBoolean("edit_value", false)) {
+		if(counterClassObj.getSettingsBool("edit_value")) {
 			counter_value.setOnLongClickListener(new View.OnLongClickListener() {
 				@Override
 				public boolean onLongClick(View view) {
@@ -168,19 +170,19 @@ public class counterFragment extends Fragment {
 						public void onClick(DialogInterface dialogInterface, int i) {
 							String newItemText;
 							//get the string inside and check if it's valid.
-							//assign to counterObj and update textview if fine
+							//assign to counterClassObj and update textview if fine
 							newItemText = editText.getText().toString();
 							if(newItemText == null || newItemText.trim().length() == 0)
 								Toast.makeText(context, "Invalid Item Name", Toast.LENGTH_SHORT).show();
 							else {
-								counterObj.setItemString(newItemText);
+								counterClassObj.setItemString(newItemText);
 								counter_item.setText(newItemText);
 								Toast.makeText(context, R.string.savedText, Toast.LENGTH_SHORT).show();
 							}
 
 						}
 					});
-			//since counter items are characters
+			//since counterClass items are characters
 			editText.setInputType(InputType.TYPE_CLASS_TEXT);
 		}
 		else if (type.equals("value")) {
@@ -190,13 +192,12 @@ public class counterFragment extends Fragment {
 						public void onClick(DialogInterface dialogInterface, int i) {
 							int newValue;
 							//get the integer inside and check if it's valid.
-							//assign to counterObj and update textview if fine
+							//assign to counterClassObj and update textview if fine
 							newValue = Integer.valueOf(editText.getText().toString());
 							if(newValue < 0)
 								Toast.makeText(context, "Invalid Item Name", Toast.LENGTH_SHORT).show();
 							else {
-								counterObj.setCounterValue(newValue);
-								counter_value.setText(String.valueOf(newValue));
+                                counter_value.setText(counterClassObj.setCounterValue(newValue));
 								if(newValue <= 0) {
 									counter_decrement.setEnabled(false);
 								}
@@ -213,5 +214,19 @@ public class counterFragment extends Fragment {
 		//the dialog is created then displayed
 		editDialogBuilder.create();
 		editDialogBuilder.show();
+	}
+
+	public void getSettings(final Context context) {
+		final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);  //the preference object
+		counterSettingsClass tempSettings = new counterSettingsClass();
+
+		tempSettings.button_minus = settings.getBoolean("button_minus", false);
+		tempSettings.edit_item = settings.getBoolean("edit_item", false);
+		tempSettings.edit_value = settings.getBoolean("edit_value", false);
+		tempSettings.vibrate_plus = settings.getBoolean("vibrate_plus", false);
+		tempSettings.vibrate_minus = settings.getBoolean("vibrate_minus", false);
+		tempSettings.vibrate_all = settings.getBoolean("vibrate_all", false);
+
+		counterClassObj.setSettings(tempSettings);
 	}
 }
