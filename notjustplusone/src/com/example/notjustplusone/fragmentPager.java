@@ -8,6 +8,8 @@ public class fragmentPager extends FragmentPagerAdapter {
 	/**
 	 * Pager to manage the fragments and choose which one is displayed
 	 */
+	//this is so i can have access to the counter fragment in the main activity to pass data
+	private counterFragment counterFragmentObj;
 
 	//pass along the cheese! or in this case, args to the super
 	public fragmentPager(FragmentManager fm) {
@@ -21,7 +23,8 @@ public class fragmentPager extends FragmentPagerAdapter {
 		//this is changed by setCurrentItem in mainActivity
 		switch (Index) {
 			case 0:
-				return new counterFragment();
+				counterFragmentObj = new counterFragment();
+				return counterFragmentObj;
 			case 1:
 				return new settingsFragment();
 //			case 2:
@@ -35,6 +38,10 @@ public class fragmentPager extends FragmentPagerAdapter {
 	public int getCount() {
 		//this is the number of pages. change as needed
 		return 2;
+	}
+
+	public counterFragment getCounterFragment() {
+		return counterFragmentObj;
 	}
 }
 

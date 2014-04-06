@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<color name="counter_value_color">#EEEEEE</color><color name="text_shadow">#000000</color></resources>
+	<color name = "counter_value_color">#EEEEEE</color>
+	<color name = "text_shadow">#000000</color>
+	<color name = "bg_color">#ff0e0e0e</color>
+</resources>

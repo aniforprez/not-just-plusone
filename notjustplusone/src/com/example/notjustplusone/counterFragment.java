@@ -7,8 +7,6 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -35,9 +33,10 @@ public class counterFragment extends Fragment {
 		View v = inflater.inflate(R.layout.counterfragment, container, false);
 		final Context context = getActivity();
 		final Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+		final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
 
 		counterClassObj = new counterClass(); //an object for the counterClass
-		getSettings(context);
+//		getSettings(context);
 
         counter_increment = (Button) v.findViewById(R.id.counter_increase);
 		counter_decrement = (Button) v.findViewById(R.id.counter_decrease);
@@ -64,13 +63,13 @@ public class counterFragment extends Fragment {
 				if(newCounterValue > 0) {
 					counter_decrement.setEnabled(true);
 				}
-				if(counterClassObj.getSettingsBool("vibrate_plus") || counterClassObj.getSettingsBool("vibrate_all")) {
+				if(settings.getBoolean("vibrate_plus", false) || settings.getBoolean("vibrate_all", false)) {
 					vibrator.vibrate(50);
 				}
 			}
 		});
 
-		if(counterClassObj.getSettingsBool("button_minus")) {
+		if(settings.getBoolean("button_minus", false)) {
 			counter_decrement.setVisibility(View.VISIBLE);
 			counter_decrement.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -81,17 +80,17 @@ public class counterFragment extends Fragment {
 					if (newCounterValue <= 0) {
 						counter_decrement.setEnabled(false);
 					}
-					if (counterClassObj.getSettingsBool("vibrate_minus") || counterClassObj.getSettingsBool("vibrate_all")) {
+					if (settings.getBoolean("vibrate_minus", false) || settings.getBoolean("vibrate_all", false)) {
 						vibrator.vibrate(50);
 					}
 				}
 			});
 		}
 		else {
-			counter_decrement.setVisibility(View.GONE);
+			counter_decrement.setVisibility(View.INVISIBLE);
 		}
 
-		if(counterClassObj.getSettingsBool("edit_item")) {
+		if(settings.getBoolean("edit_item", false)) {
 			counter_item.setOnLongClickListener(new View.OnLongClickListener() {
 				@Override
 				public boolean onLongClick(View view) {
@@ -101,7 +100,7 @@ public class counterFragment extends Fragment {
 			});
 		}
 
-		if(counterClassObj.getSettingsBool("edit_value")) {
+		if(settings.getBoolean("edit_value", false)) {
 			counter_value.setOnLongClickListener(new View.OnLongClickListener() {
 				@Override
 				public boolean onLongClick(View view) {
@@ -153,8 +152,8 @@ public class counterFragment extends Fragment {
 		AlertDialog.Builder editDialogBuilder = new AlertDialog.Builder(context);
 		LayoutInflater dialogInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		//layout inflated to view THEN to dialog to allow for searching for views inside layout
-		View content = dialogInflater.inflate(R.layout.textdialog, null);
-		editDialogBuilder.setView(content)
+		View dialogView = dialogInflater.inflate(R.layout.textdialog, null);
+		editDialogBuilder.setView(dialogView)
 				.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialogInterface, int i) {
@@ -162,7 +161,7 @@ public class counterFragment extends Fragment {
 					}
 				});
 		//this is why view was inflated first. otherwise this wouldn't work
-		final EditText editText = (EditText) content.findViewById(R.id.dialogInput);
+		final EditText editText = (EditText) dialogView.findViewById(R.id.dialogInput);
 		if (type.equals("item")) {
 			editDialogBuilder.setTitle(R.string.dialogItemText)
 					.setPositiveButton("Save", new DialogInterface.OnClickListener() {
@@ -197,7 +196,7 @@ public class counterFragment extends Fragment {
 							if(newValue < 0)
 								Toast.makeText(context, "Invalid Item Name", Toast.LENGTH_SHORT).show();
 							else {
-                                counter_value.setText(counterClassObj.setCounterValue(newValue));
+                                counter_value.setText(Integer.toString(counterClassObj.setCounterValue(newValue)));
 								if(newValue <= 0) {
 									counter_decrement.setEnabled(false);
 								}
@@ -216,17 +215,52 @@ public class counterFragment extends Fragment {
 		editDialogBuilder.show();
 	}
 
-	public void getSettings(final Context context) {
-		final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);  //the preference object
-		counterSettingsClass tempSettings = new counterSettingsClass();
+//	public void getSettings(final Context context) {
+//		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);  //the preference object
+//
+//		counterClassObj.setSettingsBool("button_minus", settings.getBoolean("button_minus", false));
+//		counterClassObj.setSettingsBool("edit_item", settings.getBoolean("edit_item", false));
+//		counterClassObj.setSettingsBool("edit_value", settings.getBoolean("edit_value", false));
+//		counterClassObj.setSettingsBool("vibrate_plus", settings.getBoolean("vibrate_plus", false));
+//		counterClassObj.setSettingsBool("vibrate_minus", settings.getBoolean("vibrate_minus", false));
+//		counterClassObj.setSettingsBool("vibrate_all", settings.getBoolean("vibrate_all", false));
+//	}
 
-		tempSettings.button_minus = settings.getBoolean("button_minus", false);
-		tempSettings.edit_item = settings.getBoolean("edit_item", false);
-		tempSettings.edit_value = settings.getBoolean("edit_value", false);
-		tempSettings.vibrate_plus = settings.getBoolean("vibrate_plus", false);
-		tempSettings.vibrate_minus = settings.getBoolean("vibrate_minus", false);
-		tempSettings.vibrate_all = settings.getBoolean("vibrate_all", false);
-
-		counterClassObj.setSettings(tempSettings);
+	public void counterSettingsChanged(String key) {
+		final Context context = getActivity();
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+		if (key.equals("button_minus")) {
+			boolean booltemp = settings.getBoolean("button_minus", false);
+			if(booltemp)
+				counter_decrement.setVisibility(View.VISIBLE);
+			else
+				counter_decrement.setVisibility(View.INVISIBLE);
+		}
+		else if (key.equals("edit_item")) {
+			boolean booltemp = settings.getBoolean("edit_item", false);
+			if(booltemp)
+				counter_item.setOnLongClickListener(new View.OnLongClickListener() {
+					@Override
+					public boolean onLongClick(View view) {
+						simpleDialogMaker("item", context);
+						return true;
+					}
+				});
+			else
+				counter_item.setOnLongClickListener(null);
+		}
+		else if (key.equals("edit_value")) {
+			boolean booltemp = settings.getBoolean("edit_value", false);
+			if(booltemp)
+				counter_value.setOnLongClickListener(new View.OnLongClickListener() {
+					@Override
+					public boolean onLongClick(View view) {
+						simpleDialogMaker("value", context);
+						return true;
+					}
+				});
+			else
+				counter_value.setOnLongClickListener(null);
+		}
 	}
 }

@@ -10,7 +10,9 @@ import android.support.v4.view.ViewPager;
 /**
  * The main activity
  */
-public class mainActivity extends FragmentActivity {
+public class mainActivity extends FragmentActivity implements settingsFragment.settingsChanged{
+	private fragmentPager fpager;
+
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		//activity_main is a simple container activity for the fragments pager. it has only one viewpager element
@@ -18,10 +20,16 @@ public class mainActivity extends FragmentActivity {
 		//we find that viewpager element and stuff it with the fragmentpager we made
 		ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 		//use getSupportFragmentManager if u decide to use v4 for some goddamned reason
-		fragmentPager fpager = new fragmentPager(getFragmentManager());
+		fpager = new fragmentPager(getFragmentManager());
 		viewPager.setAdapter(fpager);
 		//set fragment in view with this function by passing the index of page to be displayed
 		//change fragment displayed in getItem override in fragmentPager class
 		viewPager.setCurrentItem(0);
+	}
+
+	public void onSettingsChanged(String key) {
+		//seriously why the fuck doesn't android allow me easy access to fragments in a viewpager? this is not a safe method
+        counterFragment tempCounterFragment = fpager.getCounterFragment();
+		tempCounterFragment.counterSettingsChanged(key);
 	}
 }
