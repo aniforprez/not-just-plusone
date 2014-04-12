@@ -3,6 +3,8 @@
   <component name="FacetManager">
     <facet type="android" name="Android">
       <configuration>
+        <option name="USE_CUSTOM_MANIFEST_PACKAGE" value="true" />
+        <option name="CUSTOM_MANIFEST_PACKAGE" value="com.aniforprez.notjustplusone" />
         <option name="UPDATE_PROPERTY_FILES" value="true" />
       </configuration>
     </facet>

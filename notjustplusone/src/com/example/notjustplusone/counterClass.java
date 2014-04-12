@@ -4,12 +4,14 @@ package com.example.notjustplusone;
  * Class to hold value of the counter and various settings
  */
 public class counterClass {
+	private int id;
 	private int value;
 	//Time timer;
 	private String item;
 //	private counterSettingsClass settings;
 
 	public counterClass() {
+		id = 1;
 		value = 0;
 		item = "Sheep";
 //		settings = new counterSettingsClass();
@@ -17,6 +19,18 @@ public class counterClass {
 //		timer.hour = 0;
 //		timer.minute = 0;
 //		timer.second = 0;
+	}
+
+	public counterClass(int id) {
+		this.id = id;
+		value = 0;
+		item = "Sheep";
+	}
+
+	public counterClass(int id, int value, String item) {
+		this.id = id;
+		this.value = value;
+		this.item = item;
 	}
 
 	public int incrementValue() {
@@ -46,6 +60,15 @@ public class counterClass {
 
 	public String getItemString() {
 		return item;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public int setId(int idarg) {
+		id = idarg;
+		return id;
 	}
 
 //	public void setSettingsBool(String key, boolean temp) {

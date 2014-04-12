@@ -23,7 +23,8 @@ public class settingsFragment extends PreferenceFragment implements OnSharedPref
 
 	@Override
 	public void onSharedPreferenceChanged(SharedPreferences sharedPrefs, String key) {
-		settingsChanged.onSettingsChanged(key);
+		if(!key.equals("default_counter"))
+			settingsChanged.onSettingsChanged(key);
 	}
 
 	@Override

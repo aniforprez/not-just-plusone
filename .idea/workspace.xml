@@ -10,6 +10,10 @@
         <option name="packageNamePattern" value="com.example.notjustplusone" />
         <option name="pid" value="" />
       </filter>
+      <filter>
+        <option name="name" value="app: com.aniforprez.notjustplusone" />
+        <option name="packageNamePattern" value="com.aniforprez.notjustplusone" />
+      </filter>
     </filters>
   </component>
   <component name="AndroidLayoutPreviewToolWindow">
@@ -44,19 +48,51 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.example.notjustplusone" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.aniforprez.notjustplusone" />
   </component>
   <component name="ChangeListManager">
     <list id="df974482-9825-4de6-9ba5-21042dfb55fe" name="Default" comment="Initial commit. The basic counter works with numbers increasing from 0 to infinity.&#10;&#10;(cherry picked from commit e1613f881ca989d55220ad289e091ed7ad4a1e08)&#10;" />
-    <list default="true" id="3d0fe74f-01ae-40de-8dc5-3df11819c87a" name="Initial commit. The basic counter works with numbers increasing from 0 to infinity. (cherry picked from commit e1613f8)" comment="added a better way">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" afterPath="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/res/values/colors.xml" afterPath="$PROJECT_DIR$/notjustplusone/res/values/colors.xml" />
+    <list default="true" id="3d0fe74f-01ae-40de-8dc5-3df11819c87a" name="Initial commit. The basic counter works with numbers increasing from 0 to infinity. (cherry picked from commit e1613f8)" comment="added a callback onSettingsChanged to send data to activity from settingsFragment. &#10;added function counterSettingsChanged to counterFragment to receive changed settings from activity. &#10;removed members from counterSettingsClass that will be redundant in future. better to let them stay on SharedPreference.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/DBHelper.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/notjustplusone/gen/com/example/notjustplusone/Manifest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/notjustplusone/gen/com/example/notjustplusone/R.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-hdpi\ic_action_cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-hdpi\ic_action_full_screen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-hdpi\ic_action_new.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-hdpi\ic_action_pause.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-hdpi\ic_action_play.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-hdpi\ic_action_refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-hdpi\ic_action_return_from_full_screen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-hdpi\ic_action_settings.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\ic_action_cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\ic_action_full_screen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\ic_action_new.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\ic_action_pause.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\ic_action_play.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\ic_action_refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\ic_action_return_from_full_screen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\ic_action_settings.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-mdpi\texture_blackorchid.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\ic_action_cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\ic_action_full_screen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\ic_action_new.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\ic_action_pause.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\ic_action_play.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\ic_action_refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\ic_action_return_from_full_screen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\ic_action_settings.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xhdpi\texture_blackorchid.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xxhdpi\ic_action_cancel.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xxhdpi\ic_action_full_screen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xxhdpi\ic_action_new.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xxhdpi\ic_action_pause.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xxhdpi\ic_action_play.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xxhdpi\ic_action_refresh.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xxhdpi\ic_action_return_from_full_screen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Anirudh\IdeaProjects\counter\notjustplusone\res\drawable-xxhdpi\ic_action_settings.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml" afterPath="$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/notjustplusone.iml" afterPath="$PROJECT_DIR$/notjustplusone/notjustplusone.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" afterPath="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -128,8 +164,37 @@
       <file leaf-file-name="counterFragment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="5.1136" vertical-offset="0" max-vertical-offset="3791">
-              <caret line="230" column="83" selection-start-line="230" selection-start-column="83" selection-end-line="230" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.248" vertical-offset="576" max-vertical-offset="4760">
+              <caret line="62" column="63" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+              <folding>
+                <element signature="e#3356#3796#0" expanded="true" />
+                <element signature="e#3791#3792#0" expanded="true" />
+                <element signature="e#3839#4284#0" expanded="true" />
+                <element signature="e#4279#4280#0" expanded="true" />
+                <element signature="e#4546#4706#0" expanded="true" />
+                <element signature="e#4700#4701#0" expanded="true" />
+                <element signature="e#4803#4964#0" expanded="true" />
+                <element signature="e#4958#4959#0" expanded="true" />
+                <element signature="e#5878#5900#0" expanded="true" />
+                <element signature="e#6087#6115#0" expanded="true" />
+                <element signature="e#6189#6218#0" expanded="true" />
+                <element signature="e#7062#7084#0" expanded="true" />
+                <element signature="e#7340#7363#0" expanded="true" />
+                <element signature="e#8008#8026#0" expanded="true" />
+                <element signature="e#8250#8274#0" expanded="true" />
+                <element signature="e#9072#9090#0" expanded="true" />
+                <element signature="e#11315#11316#0" expanded="true" />
+                <element signature="e#11344#11345#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="646">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,8 +203,8 @@
       <file leaf-file-name="settingsFragment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="276" max-vertical-offset="901">
-              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="918">
+              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -148,38 +213,18 @@
       <file leaf-file-name="counterClass.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
-              <caret line="80" column="13" selection-start-line="79" selection-start-column="12" selection-end-line="80" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1785">
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="counterSettingsClass.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java">
+      <file leaf-file-name="DBHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fragmentPager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="833">
-              <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mainActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-              <caret line="6" column="83" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="395" max-vertical-offset="1581">
+              <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -213,15 +258,17 @@
         <option value="$PROJECT_DIR$/notjustplusone/res/xml/settingsfragment.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counter.java" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettings.java" />
-        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" />
-        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" />
-        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" />
         <option value="$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml" />
         <option value="$PROJECT_DIR$/notjustplusone/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java" />
-        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/SQLiteHelper.java" />
         <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/DBHelper.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java" />
+        <option value="$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java" />
       </list>
     </option>
   </component>
@@ -282,16 +329,14 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="counter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -353,10 +398,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -389,11 +430,31 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-mdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="counter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notjustplusone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable-hdpi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -416,13 +477,13 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="154" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="153" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="154" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="152" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="155" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="829" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="820" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="155" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
@@ -659,7 +720,11 @@
       <created>1396550459128</created>
       <updated>1396550459128</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="added a callback onSettingsChanged to send data to activity from settingsFragment. &#10;added function counterSettingsChanged to counterFragment to receive changed settings from activity. &#10;removed members from counterSettingsClass that will be redundant in future. better to let them stay on SharedPreference.">
+      <created>1396798269929</created>
+      <updated>1396798269929</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -687,9 +752,8 @@
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5198777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51914245" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853898" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32618684" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -705,13 +769,14 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18683812" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19667171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924962" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32853898" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -741,7 +806,8 @@
     <MESSAGE value="added a simple line in mainActivity to set default fragment on creation.&#10;switch statement in getItem inside pager uncommented to work properly" />
     <MESSAGE value="added settings functionality. reads the settings and performs actions. now i need to add a onsharedpreferenceschangedlistener and make this proper.&#10;&#10;also added a countersettings class to make storing the settings of individual counters simpler.&#10;&#10;whew this is tough but cool&#10;&#10;" />
     <MESSAGE value="moved sharedpreferences to settingsClass object first to avoid repeat sys calls&#10;&#10;had created a onsharedprefs listener in the counterfragment but it can't communicate effectively with the prefs fragment so i'll have to move it to the prefs fragment and communicate through the activity or move the prefs fragment to it's own activity. i dunno. have to redesign the whole thing in photoshop :(&#10;&#10;my baby, i hope u turn out alright in the end" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved sharedpreferences to settingsClass object first to avoid repeat sys calls&#10;&#10;had created a onsharedprefs listener in the counterfragment but it can't communicate effectively with the prefs fragment so i'll have to move it to the prefs fragment and communicate through the activity or move the prefs fragment to it's own activity. i dunno. have to redesign the whole thing in photoshop :(&#10;&#10;my baby, i hope u turn out alright in the end" />
+    <MESSAGE value="added a callback onSettingsChanged to send data to activity from settingsFragment. &#10;added function counterSettingsChanged to counterFragment to receive changed settings from activity. &#10;removed members from counterSettingsClass that will be redundant in future. better to let them stay on SharedPreference." />
+    <option name="LAST_COMMIT_MESSAGE" value="added a callback onSettingsChanged to send data to activity from settingsFragment. &#10;added function counterSettingsChanged to counterFragment to receive changed settings from activity. &#10;removed members from counterSettingsClass that will be redundant in future. better to let them stay on SharedPreference." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -763,29 +829,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="459">
-          <caret line="13" column="76" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="357">
+        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="340">
           <caret line="11" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -813,14 +879,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -848,49 +914,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="340">
-          <caret line="11" column="37" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -918,14 +949,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -953,14 +984,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -988,14 +1019,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/strings.xml">
@@ -1075,25 +1106,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.028428094" vertical-offset="0" max-vertical-offset="598">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/res/xml/settingsfragment.xml">
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/res/xml/settingsfragment.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32108626" vertical-offset="3" max-vertical-offset="799">
           <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/values/colors.xml">
@@ -1105,47 +1135,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/counterfragment.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42570952" vertical-offset="0" max-vertical-offset="2006">
           <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="122" max-vertical-offset="833">
-          <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="6" column="83" selection-start-line="6" selection-start-column="83" selection-end-line="6" selection-end-column="83" />
-          <folding />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/res/layout/textdialog.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.408" vertical-offset="0" max-vertical-offset="625">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.056384742" vertical-offset="0" max-vertical-offset="603">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -1153,32 +1167,95 @@
     <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterSettingsClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/gen/com/example/notjustplusone/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/gen/com/example/notjustplusone/Manifest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13578275" vertical-offset="0" max-vertical-offset="626">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/gen/com/example/notjustplusone/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13578275" vertical-offset="0" max-vertical-offset="626">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/fragmentPager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="395" max-vertical-offset="1581">
+          <caret line="93" column="23" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
-          <caret line="80" column="13" selection-start-line="79" selection-start-column="12" selection-end-line="80" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1785">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/settingsFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="918">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/mainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="21" max-vertical-offset="646">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/notjustplusone/src/com/example/notjustplusone/counterFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.1136" vertical-offset="0" max-vertical-offset="3791">
-          <caret line="230" column="83" selection-start-line="230" selection-start-column="83" selection-end-line="230" selection-end-column="83" />
-          <folding />
+        <state vertical-scroll-proportion="0.248" vertical-offset="576" max-vertical-offset="4760">
+          <caret line="62" column="63" selection-start-line="62" selection-start-column="63" selection-end-line="62" selection-end-column="63" />
+          <folding>
+            <element signature="e#3356#3796#0" expanded="true" />
+            <element signature="e#3791#3792#0" expanded="true" />
+            <element signature="e#3839#4284#0" expanded="true" />
+            <element signature="e#4279#4280#0" expanded="true" />
+            <element signature="e#4546#4706#0" expanded="true" />
+            <element signature="e#4700#4701#0" expanded="true" />
+            <element signature="e#4803#4964#0" expanded="true" />
+            <element signature="e#4958#4959#0" expanded="true" />
+            <element signature="e#5878#5900#0" expanded="true" />
+            <element signature="e#6087#6115#0" expanded="true" />
+            <element signature="e#6189#6218#0" expanded="true" />
+            <element signature="e#7062#7084#0" expanded="true" />
+            <element signature="e#7340#7363#0" expanded="true" />
+            <element signature="e#8008#8026#0" expanded="true" />
+            <element signature="e#8250#8274#0" expanded="true" />
+            <element signature="e#9072#9090#0" expanded="true" />
+            <element signature="e#11315#11316#0" expanded="true" />
+            <element signature="e#11344#11345#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1234,7 +1311,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>notjustplusone</last-edited>
+          <last-edited>Android|notjustplusone</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

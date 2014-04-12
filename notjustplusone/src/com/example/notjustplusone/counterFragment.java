@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
+import java.util.Random;
 
 /**
  * The Fragment that displays the counter
@@ -31,18 +35,57 @@ public class counterFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
 		//inflate the fragment with counterfragment layout resource
 		View v = inflater.inflate(R.layout.counterfragment, container, false);
-		final Context context = getActivity();
-		final Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-		final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
-
-		counterClassObj = new counterClass(); //an object for the counterClass
-//		getSettings(context);
-
-        counter_increment = (Button) v.findViewById(R.id.counter_increase);
+		counter_increment = (Button) v.findViewById(R.id.counter_increase);
 		counter_decrement = (Button) v.findViewById(R.id.counter_decrease);
 
 		counter_value = (TextView) v.findViewById(R.id.counter_value);
 		counter_item = (TextView) v.findViewById(R.id.counter_item);
+
+		return v;
+	}
+
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		//simple onActivityCreated ovverride to pass on arguments to super
+		super.onActivityCreated(savedInstanceState);
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		DBHelper db = new DBHelper(getActivity());
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+		List<counterClass> counterList = db.getAllCounters();
+
+		if (counterList.isEmpty()) {
+			Random randomgen = new Random();
+			int counterID = randomgen.nextInt(Integer.MAX_VALUE);
+			counterClass newCounter = new counterClass(counterID);
+			SharedPreferences.Editor editor = settings.edit();
+			editor.putInt("default_counter", counterID);
+			editor.commit();
+			db.addCounter(newCounter);
+			initCounter(newCounter);
+		}
+		else {
+			int counterID = settings.getInt("default_counter", 0);
+			for (counterClass counterItem : counterList) {
+				if(counterID == counterItem.getId()) {
+					initCounter(counterItem);
+					break;
+				}
+			}
+		}
+	}
+
+	public void initCounter(counterClass counterArg) {
+		final Context context = getActivity();
+		final Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+		final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+
+		counterClassObj = counterArg; //an object for the counterClass
+//		getSettings(context);
 
 		//set value and item text to ones stored in counter object
 		counter_value.setText(String.valueOf(counterClassObj.getCounterValue()));
@@ -69,22 +112,23 @@ public class counterFragment extends Fragment {
 			}
 		});
 
+		counter_decrement.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				//- button is clicked
+				int newCounterValue = counterClassObj.decrementValue();
+				counter_value.setText(String.valueOf(newCounterValue));
+				if (newCounterValue <= 0) {
+					counter_decrement.setEnabled(false);
+				}
+				if (settings.getBoolean("vibrate_minus", false) || settings.getBoolean("vibrate_all", false)) {
+					vibrator.vibrate(50);
+				}
+			}
+		});
+
 		if(settings.getBoolean("button_minus", false)) {
 			counter_decrement.setVisibility(View.VISIBLE);
-			counter_decrement.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View view) {
-					//- button is clicked
-					int newCounterValue = counterClassObj.decrementValue();
-					counter_value.setText(String.valueOf(newCounterValue));
-					if (newCounterValue <= 0) {
-						counter_decrement.setEnabled(false);
-					}
-					if (settings.getBoolean("vibrate_minus", false) || settings.getBoolean("vibrate_all", false)) {
-						vibrator.vibrate(50);
-					}
-				}
-			});
 		}
 		else {
 			counter_decrement.setVisibility(View.INVISIBLE);
@@ -109,15 +153,16 @@ public class counterFragment extends Fragment {
 				}
 			});
 		}
-
-		return v;
 	}
 
 	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		//simple onActivityCreated ovverride to pass on arguments to super
-		super.onActivityCreated(savedInstanceState);
+	public void onPause() {
+		super.onPause();
+		DBHelper db = new DBHelper(getActivity());
+
+		db.updateCounter(counterClassObj);
 	}
+
 
 	//generic function to create simple confirmation dialogs on this screen
 	public void simpleDialogMaker(final String type, final Context context) {
@@ -262,5 +307,9 @@ public class counterFragment extends Fragment {
 			else
 				counter_value.setOnLongClickListener(null);
 		}
+	}
+
+	public counterClass getCounter() {
+		return counterClassObj;
 	}
 }
