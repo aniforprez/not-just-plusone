@@ -3,6 +3,10 @@ package com.example.notjustplusone;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 //used v13 support library. damn thing has no support online. you'd think at least the android dev site would have some
 //but nooo it only has v4 crap
@@ -31,5 +35,26 @@ public class mainActivity extends FragmentActivity implements settingsFragment.s
 		//seriously why the fuck doesn't android allow me easy access to fragments in a viewpager? this is not a safe method
         counterFragment tempCounterFragment = fpager.getCounterFragment();
 		tempCounterFragment.counterSettingsChanged(key);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu items for use in the action bar
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.main_activity_actions, menu);
+		Log.i("action_bar", "apparently this is being called!");
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.add_counter:
+				counterFragment tempCounterFragment = fpager.getCounterFragment();
+				tempCounterFragment.newCounter();
+				return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
 	}
 }

@@ -7,4 +7,5 @@
 	<string name = "dialogValueText">Enter a new value</string>
 	<string name = "cancelledText">Cancelled</string>
 	<string name = "savedText">Saved</string>
+	<string name = "action_plus">ADD COUNTER</string>
 </resources>

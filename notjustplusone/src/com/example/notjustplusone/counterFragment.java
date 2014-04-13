@@ -309,7 +309,31 @@ public class counterFragment extends Fragment {
 		}
 	}
 
-	public counterClass getCounter() {
-		return counterClassObj;
+	public void newCounter() {
+		Random randomgen = new Random();
+		DBHelper db = new DBHelper(getActivity());
+		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+		List<counterClass> counterList = db.getAllCounters();
+
+		Boolean counterUnique;
+		int counterID;
+		do {
+			counterUnique = true;
+			counterID = randomgen.nextInt(Integer.MAX_VALUE);
+			for(counterClass counterItem : counterList) {
+				if (counterItem.getId() == counterID) {
+					counterUnique = false;
+					break;
+				}
+			}
+		} while (!counterUnique);
+		counterClass newCounter = new counterClass(counterID);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putInt("default_counter", counterID);
+		editor.commit();
+		db.addCounter(newCounter);
+		initCounter(newCounter);
 	}
+
 }

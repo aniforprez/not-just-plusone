@@ -54,9 +54,7 @@ public class DBHelper extends SQLiteOpenHelper {
 		values.put(KEY_ITEM, counter.getItemString());
 		values.put(KEY_VALUE, counter.getCounterValue());
 
-		if (db.insert(TABLE_COUNTERS, null, values) >= 0) {
-			Log.i("addCounter", "SUCCESS!!!");
-		}
+		db.insert(TABLE_COUNTERS, null, values);
 		db.close();
 	}
 

@@ -27,12 +27,6 @@ public class counterClass {
 		item = "Sheep";
 	}
 
-	public counterClass(int id, int value, String item) {
-		this.id = id;
-		this.value = value;
-		this.item = item;
-	}
-
 	public int incrementValue() {
 		++value;
 		return value;
